@@ -1,22 +1,22 @@
 import React, { Component } from 'react'
-import styled, { ThemeProvider } from 'styled-components';
+import styled from 'styled-components';
 
-import theme from '../assets/theme'
-
-import H1 from '../components/headings'
+import { H1 } from '../components/typography'
 
 const HERO = styled.header`
-    margin: 5rem 0;
+    height: 100vh;
+    width: ${props => props.theme.defaultWidth};
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
 `;
 
 export default class Hero extends Component {
     render() {
         return (
-            <ThemeProvider theme={theme}>
-                <HERO>
-                    <H1>Frontend Developer.</H1>
-                </HERO>
-            </ThemeProvider>
+            <HERO>
+                <H1>Frontend Developer.<br />Designer.</H1>
+            </HERO>
         )
     }
 }
