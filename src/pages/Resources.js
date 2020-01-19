@@ -4,10 +4,21 @@ import styled from 'styled-components'
 import device from '../assets/breakpoints'
 
 import { MAIN } from '../components/sections'
-import Hero from '../components/layout/Hero'
+// eslint-disable-next-line
+import { H1, P } from '../components/typography'
 import ResourceSection from '../components/ResourceSection'
 
 import RESOURCE_LIST from '../resource-list'
+// eslint-disable-next-line
+import illustration from '../assets/sharing-caring.svg'
+
+const HERO = styled.header`
+    height: 100vh;
+    width: ${props => props.theme.defaultWidth};
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+`;
 
 const WRAPPER = styled.div`
     width: ${props => props.theme.defaultWidth};
@@ -24,13 +35,17 @@ export default class Resources extends Component {
     render() {
         return (
             <MAIN>
-                <Hero title="Resources. Because sharing is caring." />
+                <HERO>
+                    <H1>Resources. Because sharing is caring.</H1>
+                </HERO>
                 <WRAPPER>
+                    <ResourceSection sectionTitle='Inspiration' resourceCat={RESOURCE_LIST.inspiration} />
+                    <ResourceSection sectionTitle='Development' resourceCat={RESOURCE_LIST.devlopment} />
                     <ResourceSection sectionTitle='Images' resourceCat={RESOURCE_LIST.images} />
                     <ResourceSection sectionTitle='Typography' resourceCat={RESOURCE_LIST.typography} />
-                    <ResourceSection sectionTitle='Devlopment' resourceCat={RESOURCE_LIST.devlopment} />
                 </WRAPPER>
             </MAIN>
         )
     }
 }
+
