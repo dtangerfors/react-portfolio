@@ -9,7 +9,7 @@
 
 body {
   box-sizing: border-box;
-  background-color: #0F5224;
+  background-color: #3B1EDD;
 }
 
 html {
@@ -18,10 +18,13 @@ html {
 
 
 .App {
+  position: relative;
   display: flex;
   align-items: center;
   flex-direction: column;
-  background-color: #F4F4ED;
+  background-color:
+    #F4F4ED;
+  /*  #e4e4e4; */
 }
 
 @font-face {
