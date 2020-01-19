@@ -1,10 +1,16 @@
 import styled from 'styled-components'
 
+import device from '../assets/breakpoints'
+
 export const H1 = styled.h1`
     font-size: 7rem;
     font-family: ${props => props.theme.titleFont};
     font-weight: 400;
     color: ${props => props.theme.primaryColor};
+
+    @media ${device.tabPort} { 
+        font-size: 5rem;
+    }
 `;
 
 export const H2 = styled.h2`
