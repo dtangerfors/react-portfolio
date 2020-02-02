@@ -9,7 +9,7 @@ export default class Home extends Component {
     render() {
         return (
             <MAIN>
-                <Hero title="Frontend developer. Designer." />
+                <Hero title="Hi, I’m Daniel – a frontend developer who knows design." />
                 <Cases />
             </MAIN>
         )
