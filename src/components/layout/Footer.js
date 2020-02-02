@@ -2,7 +2,8 @@ import React, { Component } from 'react'
 import styled, { keyframes } from 'styled-components'
 import device from '../../assets/breakpoints'
 
-import { H3, A, EXTERNAL_LINK, P } from '../typography'
+import { H3, EXTERNAL_LINK, P } from '../typography'
+import { NAV__LINK } from './Nav'
 
 import logo from '../../assets/logo.svg'
 
@@ -17,7 +18,6 @@ const FOOTER = styled.footer`
     background: ${props => props.theme.secondaryColor};
 
     padding: 8rem;
-    margin-top: 8rem;
 
     overflow: hidden;
 
@@ -60,14 +60,11 @@ const rotate = keyframes`
 const FOOTER__LOGO = styled.img`
     width: 20rem;
     position: absolute;
+    top: -4rem;
     right: -4rem;
     align-self: center;
 
     animation: ${rotate} 20s linear infinite;
-
-    @media ${device.phone} {
-        top: -4rem;
-    }
 `;
 
 
@@ -82,14 +79,9 @@ export default class Footer extends Component {
                     <EXTERNAL_LINK footer underline href="https://www.linkedin.com/in/daniel-t%C3%A4ngerfors/">LinkedIn</EXTERNAL_LINK>
                 </FOOTER__COLUMN>
                 <FOOTER__COLUMN>
-                    <H3>Projects</H3>
-                    <A footer>Frontend</A>
-                    <A footer>Design</A>
-                </FOOTER__COLUMN>
-                <FOOTER__COLUMN>
                     <H3>Good stuff</H3>
-                    <A footer>About me</A>
-                    <A footer>Resources</A>
+                    <NAV__LINK footer to="/resources">About me</NAV__LINK>
+                    <NAV__LINK footer to="/resources">Resources</NAV__LINK>
                 </FOOTER__COLUMN>
                 <FOOTER__LOGO src={logo} alt="Dtangerfors" />
                 <FOOTER__NOTICE>(C) Daniel Tängerfors 2020. This site was made using React.js.</FOOTER__NOTICE>
