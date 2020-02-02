@@ -4,20 +4,24 @@ import styled from 'styled-components'
 import device from '../assets/breakpoints'
 
 import { MAIN } from '../components/sections'
-// eslint-disable-next-line
+
 import { H1, P } from '../components/typography'
 import ResourceSection from '../components/ResourceSection'
 
 import RESOURCE_LIST from '../resource-list'
-// eslint-disable-next-line
-import illustration from '../assets/sharing-caring.svg'
 
 const HERO = styled.header`
     height: 100vh;
     width: ${props => props.theme.defaultWidth};
     display: flex;
-    align-items: center;
-    justify-content: flex-start;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+
+    @media ${device.tabPort} {
+        height: 50vh;
+        width: ${props => props.theme.mobileWidth};
+    }
 `;
 
 const WRAPPER = styled.div`
@@ -26,9 +30,13 @@ const WRAPPER = styled.div`
     flex-direction: row;
     flex-wrap: wrap;
 
-    @media ${device.phone} { 
+    @media ${device.tabPort} { 
         width: ${props => props.theme.mobileWidth};
     }
+`;
+
+const LEAD = styled(P)`
+    width: 50%;
 `;
 
 export default class Resources extends Component {
@@ -37,6 +45,7 @@ export default class Resources extends Component {
             <MAIN>
                 <HERO>
                     <H1>Resources. Because sharing is caring.</H1>
+                    <LEAD>I love learning new things; finding new sources for inspiration and through endless hours of scrolling I’ve found several sources of learning and inspiration. Here on this page you’ll find what inspires and brightens me, whether it’s for coding, designing or just fun stuff. </LEAD>
                 </HERO>
                 <WRAPPER>
                     <ResourceSection sectionTitle='Inspiration' resourceCat={RESOURCE_LIST.inspiration} />
